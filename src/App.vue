@@ -1,18 +1,14 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <nav>
+    <router-link to="/" id="titre">
+      <img src="../src/assets/logoVert.png" alt="Logo entreprise" width="100" height="100"/>
+      <h1>Physis Solutions</h1>
+    </router-link>
+    <router-link to="/mon-entreprise" class="nav-link">Mon entreprise</router-link>
+    <router-link to="/mes-projets" class="nav-link">Mes projets</router-link>
+  </nav>
+  <router-view/>
 </template>
-
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
 
 <style>
 #app {
@@ -21,6 +17,41 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
+
+nav{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#titre{
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  justify-content: flex-start;
+  align-items: center;
+  color: #2c3e50;
+
+}
+
+.nav-link{
+  text-decoration: none;
+  color: #2c3e50;
+  transition-duration: 0.4s;
+  font-weight: bold;
+  font-size: large;
+  width: 12%;
+  margin-left: 3%;
+  padding: 15px 32px;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.nav-link:hover{
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
 </style>
